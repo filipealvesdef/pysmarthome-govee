@@ -1,5 +1,5 @@
 from govee_api2 import api
-from pysmarthome import Manager
+from pysmarthome import Manager, rgb_to_hex
 
 
 class GoveeManager(Manager):
@@ -26,8 +26,7 @@ class GoveeManager(Manager):
 
         power = 'on' if state['onOff'] else 'off'
         brightness = round(100 * (state['brightness'] / 255))
-        c = state['color']
-        color = '#{:02x}{:02x}{:02x}'.format(c['r'], c['g'], c['b'])
+        color = rgb_to_hex(*state['color'].values())
 
         print(f'Lets try to update the state of {dev.name}')
         print(f'power: {power} | brightness: {brightness} | color {color}.')
