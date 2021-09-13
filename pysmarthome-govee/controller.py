@@ -1,9 +1,9 @@
-from pysmarthome import RgbLampController, RgbLampsModel
+from pysmarthome import Model, RgbLampController
 from .manager import GoveeManager
 
 
 class GoveeLedStripController(RgbLampController):
-    model_class = RgbLampsModel.clone('GoveeModel')
+    model_class = Model.extends(RgbLampController.model_class, name='GoveeModel')
     model_class.schema |= {
         'mac_addr': { 'type': 'string' }
     }
