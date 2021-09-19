@@ -7,7 +7,7 @@ setup(
     author='Filipe Alves',
     author_email='filipe.alvesdefernando@gmail.com',
     install_requires=[
-        'govee_api2',
+        'govee_api2~=1.3.0',
         'pysmarthome~=3.0',
     ],
     packages=find_packages(),
