@@ -44,8 +44,8 @@ class GoveeLedStripController(RgbLampController):
             print(e)
 
 
-    def set_brightness(self):
-        pass
+    def set_brightness(self, val):
+        self.dev.brightness = int(val) / 100
 
 
     def get_power(self):
